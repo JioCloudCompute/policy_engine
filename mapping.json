@@ -1,0 +1,164 @@
+{
+"DescribeImages":
+{
+    "action": "jrn:jcs:compute:ind-west-1:DescribeImages",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute:ind-west-1:image",
+            "isResourceValueRequired": "False",
+            "resourcePath" : "params.ImageId.N"
+        }
+    ]
+},
+"DescribeInstances":
+{
+    "action": "jrn:jcs:compute:ind-west-1:DescribeInstances",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute:ind-west-1:instance",
+            "isResourceValueRequired": "False",
+            "resourcePath" : "params.InstanceId.N"
+        }
+    ]
+},
+"StartInstances":
+{
+    "action": "jrn:jcs:compute:ind-west-1:StartInstances",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute:ind-west-1:instance",
+            "isResourceValueRequired": "True",
+            "resourcePath" : "params.InstanceId.N"
+        }
+    ]
+},
+"StopInstances":
+{
+    "action": "jrn:jcs:compute:ind-west-1:StopInstances",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute:ind-west-1:instance",
+            "isResourceValueRequired": "True",
+            "resourcePath" : "params.InstanceId.N"
+        }
+    ]
+},
+"RebootInstances":
+{
+    "action": "jrn:jcs:compute:ind-west-1:RebootInstances",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute:ind-west-1:instance",
+            "isResourceValueRequired": "True",
+            "resourcePath" : "params.InstanceId.N"
+        }
+    ]
+},
+"TerminateInstances":
+{
+    "action": "jrn:jcs:compute:ind-west-1:TerminateInstances",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute:ind-west-1:instance",
+            "isResourceValueRequired": "True",
+            "resourcePath" : "params.InstanceId.N"
+        }
+    ]
+},
+"CreateKeyPair":
+{
+    "action": "jrn:jcs:compute:ind-west-1:CreateKeyPair",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute:ind-west-1:keypair",
+            "isResourceValueRequired": "True",
+            "resourcePath" : "params.KeyName"
+        }
+    ]
+},
+"DeleteKeyPair":
+{
+    "action": "jrn:jcs:compute:ind-west-1:DeleteKeyPair",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute:ind-west-1:keypair",
+            "isResourceValueRequired": "True",
+            "resourcePath" : "params.KeyName"
+        }
+    ]
+},
+"ImportKeyPair":
+{
+    "action": "jrn:jcs:compute:ind-west-1:ImportKeyPair",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute:ind-west-1:keypair",
+            "isResourceValueRequired": "True",
+            "resourcePath" : "params.KeyName"
+        }
+    ]
+},
+"DescribeKeyPairs":
+{
+    "action": "jrn:jcs:compute:ind-west-1:DescribeKeyPairs",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute:ind-west-1:keypair",
+            "isResourceValueRequired": "False"
+        }
+    ]
+},
+"RunInstances":
+{
+    "action": "jrn:jcs:compute:ind-west-1:RunInstances",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute:region:image",
+            "isResourceValueRequired": "True",
+            "resourcePath": "params.ImageId"
+        },
+        {
+            "resource": "jrn:jcs:compute:region:instance",
+            "isResourceValueRequired": "True",
+            "resourcePath": "params.InstanceTypeId"
+        },
+        {
+            "resource": "jrn:jcs:compute:region:keypair",
+            "isResourceValueRequired": "False",
+            "resourcePath": "params.KeyName"
+        },
+        {
+            "resource": "jrn:jcs:compute:region:volume",
+            "isResourceValueRequired": "False"
+        },
+        {
+            "resource": "jrn:jcs:compute:region:security-group",
+            "isResourceValueRequired": "False",
+            "resourcePath": "params.SecurityGroupId"
+        },
+        {
+            "resource": "jrn:jcs:compute:region:subnet",
+            "isResourceValueRequired": "False",
+            "resourcePath": "params.SubnetId"
+        }
+    ],
+    "secondary_actions": [
+        "CreateVolume"
+    ]
+},
+"CreateVolume":
+{
+    "action": "jrn:jcs:compute:ind-west-1:CreateVolume",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute:ind-west-1:volume",
+            "isResourceValueRequired": "False"
+        },
+        {
+            "resource": "jrn:jcs:compute:ind-west-1:image",
+            "isResourceValueRequired": "False",
+            "resourcePath": "params.SnapshotId"
+        }
+    ]
+}
+}
