@@ -74,7 +74,7 @@ class PolicyEngine():
                 idx += 1
                 path = match.group(1) + '.' + str(idx)
                 if match.group(2): path += '.' + match.group(2)
-        else:
+        elif params.get(path_string):
             rsrc_values.append(params.get(path_string))
         return rsrc_values
 
