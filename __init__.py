@@ -7,7 +7,6 @@ Policy Engine Middleware
 
 import re
 import os
-import wsgi
 import webob
 import webob.dec
 import webob.exc
