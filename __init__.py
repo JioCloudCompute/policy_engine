@@ -7,7 +7,6 @@ Policy Engine Middleware
 
 import re
 import os
-import wsgi
 import webob
 import webob.dec
 import webob.exc
@@ -89,7 +88,7 @@ class PolicyEngine():
             raise webob.exc.HTTPInternalServerError(explanation=("The "
                 " policy authorization engine has gone to error state."))
         for resource in resource_list:
-            rsrc = resource.get(self.rsrc_key)
+            rsrc = resource.get(self.rsrc_key) + ':'
             rsrc_values = []
             if resource.get(self.rsrc_value_key):
                 rsrc_values = self.get_resource_value(resource, params)
@@ -98,7 +97,7 @@ class PolicyEngine():
             if rsrc_values:
                 for value in rsrc_values:
                     ra_entry = {'action': action, 
-                                'resource': rsrc + ':' + value,
+                                'resource': rsrc + value,
                                 'implicit_allow': implicit_allow}
                     ra_list.append(ra_entry)
             elif rsrc_value_rqrd == 'true':
