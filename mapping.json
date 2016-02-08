@@ -1,21 +1,42 @@
 {
 "DescribeImages":
 {
-    "action": "jrn:jcs:compute:ind-west-1:DescribeImages",
+    "action": "compute:DescribeImages",
     "resources": [
         {
-            "resource": "jrn:jcs:compute:ind-west-1:image",
+            "resource": "jrn:jcs:compute::Image",
             "isResourceValueRequired": "False",
             "resourcePath" : "params.ImageId.N"
         }
     ]
 },
-"DescribeInstances":
+"DescribeVolumes":
 {
-    "action": "jrn:jcs:compute:ind-west-1:DescribeInstances",
+    "action": "compute:DescribeVolumes",
     "resources": [
         {
-            "resource": "jrn:jcs:compute:ind-west-1:instance",
+            "resource": "jrn:jcs:compute::Volume",
+            "isResourceValueRequired": "False"
+        }
+    ]
+},
+"DescribeInstanceTypes":
+{
+    "action": "compute:DescribeInstanceTypes",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute::InstanceType",
+            "isResourceValueRequired": "False",
+            "resourcePath" : "params.InstanceTypeId.N"
+        }
+    ]
+},
+"DescribeInstances":
+{
+    "action": "compute:DescribeInstances",
+    "resources": [
+        {
+            "resource": "jrn:jcs:compute::Instance",
             "isResourceValueRequired": "False",
             "resourcePath" : "params.InstanceId.N"
         }
@@ -23,10 +44,10 @@
 },
 "StartInstances":
 {
-    "action": "jrn:jcs:compute:ind-west-1:StartInstances",
+    "action": "compute:StartInstances",
     "resources": [
         {
-            "resource": "jrn:jcs:compute:ind-west-1:instance",
+            "resource": "jrn:jcs:compute::Instance",
             "isResourceValueRequired": "True",
             "resourcePath" : "params.InstanceId.N"
         }
@@ -34,10 +55,10 @@
 },
 "StopInstances":
 {
-    "action": "jrn:jcs:compute:ind-west-1:StopInstances",
+    "action": "compute:StopInstances",
     "resources": [
         {
-            "resource": "jrn:jcs:compute:ind-west-1:instance",
+            "resource": "jrn:jcs:compute::Instance",
             "isResourceValueRequired": "True",
             "resourcePath" : "params.InstanceId.N"
         }
@@ -45,10 +66,10 @@
 },
 "RebootInstances":
 {
-    "action": "jrn:jcs:compute:ind-west-1:RebootInstances",
+    "action": "compute:RebootInstances",
     "resources": [
         {
-            "resource": "jrn:jcs:compute:ind-west-1:instance",
+            "resource": "jrn:jcs:compute::Instance",
             "isResourceValueRequired": "True",
             "resourcePath" : "params.InstanceId.N"
         }
@@ -56,10 +77,10 @@
 },
 "TerminateInstances":
 {
-    "action": "jrn:jcs:compute:ind-west-1:TerminateInstances",
+    "action": "compute:TerminateInstances",
     "resources": [
         {
-            "resource": "jrn:jcs:compute:ind-west-1:instance",
+            "resource": "jrn:jcs:compute::Instance",
             "isResourceValueRequired": "True",
             "resourcePath" : "params.InstanceId.N"
         }
@@ -67,10 +88,10 @@
 },
 "CreateKeyPair":
 {
-    "action": "jrn:jcs:compute:ind-west-1:CreateKeyPair",
+    "action": "compute:CreateKeyPair",
     "resources": [
         {
-            "resource": "jrn:jcs:compute:ind-west-1:keypair",
+            "resource": "jrn:jcs:compute::Keypair",
             "isResourceValueRequired": "True",
             "resourcePath" : "params.KeyName"
         }
@@ -78,10 +99,10 @@
 },
 "DeleteKeyPair":
 {
-    "action": "jrn:jcs:compute:ind-west-1:DeleteKeyPair",
+    "action": "compute:DeleteKeyPair",
     "resources": [
         {
-            "resource": "jrn:jcs:compute:ind-west-1:keypair",
+            "resource": "jrn:jcs:compute::Keypair",
             "isResourceValueRequired": "True",
             "resourcePath" : "params.KeyName"
         }
@@ -89,10 +110,10 @@
 },
 "ImportKeyPair":
 {
-    "action": "jrn:jcs:compute:ind-west-1:ImportKeyPair",
+    "action": "compute:ImportKeyPair",
     "resources": [
         {
-            "resource": "jrn:jcs:compute:ind-west-1:keypair",
+            "resource": "jrn:jcs:compute::Keypair",
             "isResourceValueRequired": "True",
             "resourcePath" : "params.KeyName"
         }
@@ -100,44 +121,44 @@
 },
 "DescribeKeyPairs":
 {
-    "action": "jrn:jcs:compute:ind-west-1:DescribeKeyPairs",
+    "action": "compute:DescribeKeyPairs",
     "resources": [
         {
-            "resource": "jrn:jcs:compute:ind-west-1:keypair",
+            "resource": "jrn:jcs:compute::Keypair",
             "isResourceValueRequired": "False"
         }
     ]
 },
 "RunInstances":
 {
-    "action": "jrn:jcs:compute:ind-west-1:RunInstances",
+    "action": "compute:RunInstances",
     "resources": [
         {
-            "resource": "jrn:jcs:compute:region:image",
+            "resource": "jrn:jcs:compute::Image",
             "isResourceValueRequired": "True",
             "resourcePath": "params.ImageId"
         },
         {
-            "resource": "jrn:jcs:compute:region:instance",
+            "resource": "jrn:jcs:compute::InstanceType",
             "isResourceValueRequired": "True",
             "resourcePath": "params.InstanceTypeId"
         },
         {
-            "resource": "jrn:jcs:compute:region:keypair",
+            "resource": "jrn:jcs:compute::Keypair",
             "isResourceValueRequired": "False",
             "resourcePath": "params.KeyName"
         },
         {
-            "resource": "jrn:jcs:compute:region:volume",
+            "resource": "jrn:jcs:compute::Volume",
             "isResourceValueRequired": "False"
         },
         {
-            "resource": "jrn:jcs:compute:region:security-group",
+            "resource": "jrn:jcs:compute::SecurityGroup",
             "isResourceValueRequired": "False",
             "resourcePath": "params.SecurityGroupId"
         },
         {
-            "resource": "jrn:jcs:compute:region:subnet",
+            "resource": "jrn:jcs:compute::Subnet",
             "isResourceValueRequired": "False",
             "resourcePath": "params.SubnetId"
         }
@@ -148,14 +169,14 @@
 },
 "CreateVolume":
 {
-    "action": "jrn:jcs:compute:ind-west-1:CreateVolume",
+    "action": "compute:CreateVolume",
     "resources": [
         {
-            "resource": "jrn:jcs:compute:ind-west-1:volume",
+            "resource": "jrn:jcs:compute:volume",
             "isResourceValueRequired": "False"
         },
         {
-            "resource": "jrn:jcs:compute:ind-west-1:image",
+            "resource": "jrn:jcs:compute:image",
             "isResourceValueRequired": "False",
             "resourcePath": "params.SnapshotId"
         }
