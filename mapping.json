@@ -12,7 +12,7 @@
 },
 "DescribeVpcs":
 {
-    "action": "vpc:DescribeVpcs",
+    "action": "jrn:jcs:vpc:DescribeVpcs",
     "resources": [
         {
             "resource": "jrn:jcs:vpc::Vpc",
@@ -22,7 +22,7 @@
 },
 "CreateVpc":
 {
-    "action": "vpc:CreateVpc",
+    "action": "jrn:jcs:vpc:CreateVpc",
     "resources": [
         {
             "resource": "jrn:jcs:vpc::Vpc",
@@ -32,7 +32,7 @@
 },
 "CreateSubnet":
 {
-    "action": "vpc:CreateSubnet",
+    "action": "jrn:jcs:vpc:CreateSubnet",
     "resources": [
         {
             "resource": "jrn:jcs:vpc::Subnet",
