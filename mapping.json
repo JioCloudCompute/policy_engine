@@ -1,7 +1,7 @@
 {
 "DescribeImages":
 {
-    "action": "compute:DescribeImages",
+    "action": "jrn:jcs:compute:DescribeImages",
     "resources": [
         {
             "resource": "jrn:jcs:compute::Image",
@@ -10,9 +10,39 @@
         }
     ]
 },
+"DescribeVpcs":
+{
+    "action": "vpc:DescribeVpcs",
+    "resources": [
+        {
+            "resource": "jrn:jcs:vpc::Vpc",
+            "isResourceValueRequired": "False"
+        }
+    ]
+},
+"CreateVpc":
+{
+    "action": "vpc:CreateVpc",
+    "resources": [
+        {
+            "resource": "jrn:jcs:vpc::Vpc",
+            "isResourceValueRequired": "False"
+        }
+    ]
+},
+"CreateSubnet":
+{
+    "action": "vpc:CreateSubnet",
+    "resources": [
+        {
+            "resource": "jrn:jcs:vpc::Subnet",
+            "isResourceValueRequired": "False"
+        }
+    ]
+},
 "DescribeVolumes":
 {
-    "action": "compute:DescribeVolumes",
+    "action": "jrn:jcs:compute:DescribeVolumes",
     "resources": [
         {
             "resource": "jrn:jcs:compute::Volume",
@@ -22,7 +52,7 @@
 },
 "DescribeInstanceTypes":
 {
-    "action": "compute:DescribeInstanceTypes",
+    "action": "jrn:jcs:compute:DescribeInstanceTypes",
     "resources": [
         {
             "resource": "jrn:jcs:compute::InstanceType",
@@ -33,7 +63,7 @@
 },
 "DescribeInstances":
 {
-    "action": "compute:DescribeInstances",
+    "action": "jrn:jcs:compute:DescribeInstances",
     "resources": [
         {
             "resource": "jrn:jcs:compute::Instance",
@@ -44,7 +74,7 @@
 },
 "StartInstances":
 {
-    "action": "compute:StartInstances",
+    "action": "jrn:jcs:compute:StartInstances",
     "resources": [
         {
             "resource": "jrn:jcs:compute::Instance",
@@ -55,7 +85,7 @@
 },
 "StopInstances":
 {
-    "action": "compute:StopInstances",
+    "action": "jrn:jcs:compute:StopInstances",
     "resources": [
         {
             "resource": "jrn:jcs:compute::Instance",
@@ -66,7 +96,7 @@
 },
 "RebootInstances":
 {
-    "action": "compute:RebootInstances",
+    "action": "jrn:jcs:compute:RebootInstances",
     "resources": [
         {
             "resource": "jrn:jcs:compute::Instance",
@@ -77,7 +107,7 @@
 },
 "TerminateInstances":
 {
-    "action": "compute:TerminateInstances",
+    "action": "jrn:jcs:compute:TerminateInstances",
     "resources": [
         {
             "resource": "jrn:jcs:compute::Instance",
@@ -88,7 +118,7 @@
 },
 "CreateKeyPair":
 {
-    "action": "compute:CreateKeyPair",
+    "action": "jrn:jcs:compute:CreateKeyPair",
     "resources": [
         {
             "resource": "jrn:jcs:compute::Keypair",
@@ -99,7 +129,7 @@
 },
 "DeleteKeyPair":
 {
-    "action": "compute:DeleteKeyPair",
+    "action": "jrn:jcs:compute:DeleteKeyPair",
     "resources": [
         {
             "resource": "jrn:jcs:compute::Keypair",
@@ -110,7 +140,7 @@
 },
 "ImportKeyPair":
 {
-    "action": "compute:ImportKeyPair",
+    "action": "jrn:jcs:compute:ImportKeyPair",
     "resources": [
         {
             "resource": "jrn:jcs:compute::Keypair",
@@ -121,7 +151,7 @@
 },
 "DescribeKeyPairs":
 {
-    "action": "compute:DescribeKeyPairs",
+    "action": "jrn:jcs:compute:DescribeKeyPairs",
     "resources": [
         {
             "resource": "jrn:jcs:compute::Keypair",
@@ -131,7 +161,7 @@
 },
 "RunInstances":
 {
-    "action": "compute:RunInstances",
+    "action": "jrn:jcs:compute:RunInstances",
     "resources": [
         {
             "resource": "jrn:jcs:compute::Image",
@@ -169,14 +199,14 @@
 },
 "CreateVolume":
 {
-    "action": "compute:CreateVolume",
+    "action": "jrn:jcs:compute:CreateVolume",
     "resources": [
         {
-            "resource": "jrn:jcs:compute:volume",
+            "resource": "jrn:jcs:compute::Volume",
             "isResourceValueRequired": "False"
         },
         {
-            "resource": "jrn:jcs:compute:image",
+            "resource": "jrn:jcs:compute::Image",
             "isResourceValueRequired": "False",
             "resourcePath": "params.SnapshotId"
         }
